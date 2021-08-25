@@ -6,27 +6,24 @@ class TelaInicial extends StatelessWidget {
   void main() => runApp(TelaInicial());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey,
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/fundoverde.jpg'))),
-            ),
-            InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              ListaFamiliares()));
-                },
-                child: Image.asset('assets/images/botaoListaDeFamilia.png'))
-          ],
-        ),
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('images/fundoverde.jpg'),
+                    fit: BoxFit.cover)),
+          ),
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => ListaFamiliares()));
+              },
+              child: Image.asset('images/botaoListaDeFamilia.png'))
+        ],
       ),
     );
   }
